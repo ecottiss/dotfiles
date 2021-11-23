@@ -24,6 +24,8 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # Load the theme.
 antigen theme robbyrussell
 
+export DISABLE_LS_COLORS=true
+
 # oh my posh for wsl
 if [[ $(grep Microsoft /proc/version)$? ]]; then
     alias oh-my-posh='oh-my-posh-wsl'
