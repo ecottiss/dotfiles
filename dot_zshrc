@@ -30,6 +30,12 @@ if [[ $(grep Microsoft /proc/version)$? ]]; then
 fi
 eval "$(oh-my-posh --init --shell zsh --config ~/.oh-my-posh/ed.omp.json)"
 
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nano'
+else
+  export EDITOR='code'
+fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
