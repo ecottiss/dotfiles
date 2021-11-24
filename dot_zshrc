@@ -3,8 +3,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Source
 source $HOME/antigen.zsh
-source /opt/ros/foxy/setup.zsh
-source ~/ws_moveit2/install/setup.zsh
+# source /opt/ros/foxy/setup.zsh
+# source ~/ws_moveit2/install/setup.zsh
 
 
 # Load the oh-my-zsh's library.
@@ -27,7 +27,9 @@ antigen theme robbyrussell
 export DISABLE_LS_COLORS=true
 
 # oh my posh for wsl
-if [[ $(grep Microsoft /proc/version)$? ]]; then
+wsl=$(grep -c WSL /proc/version)
+if (( $wsl > 0 ))
+then
     alias oh-my-posh='oh-my-posh-wsl'
 fi
 eval "$(oh-my-posh --init --shell zsh --config ~/.oh-my-posh/ed.omp.json)"
