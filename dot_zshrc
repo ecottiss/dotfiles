@@ -26,12 +26,7 @@ antigen theme robbyrussell
 
 export DISABLE_LS_COLORS=true
 
-# oh my posh for wsl
-wsl=$(grep -c WSL /proc/version)
-if (( $wsl > 0 ))
-then
-    alias oh-my-posh='oh-my-posh-wsl'
-fi
+# oh my posh
 eval "$(oh-my-posh --init --shell zsh --config ~/.oh-my-posh/ed.omp.json)"
 
 # Preferred editor for local and remote sessions
